@@ -6,8 +6,9 @@ Prerequisites
 Launch an EC2 instance:
 
 Go to the AWS Management Console and navigate to the EC2 service.
-Click on "Launch Instance" and select the Ubuntu Server 18.04 LTS (or the latest version) AMI.
-Choose an instance type, configure other settings as needed, and launch the instance.
+Click on "Launch Instance" and select the Ubuntu Server 20.04 LTS (or the latest version) AMI.
+Choose an instance type, configure other settings as needed, such as security Group(which is a virtual firewall) and launch the instance.
+
 Connect to the EC2 instance:
 
 Once the instance is running, select it in the EC2 dashboard and click on "Connect".
@@ -18,10 +19,13 @@ Replace <path_to_key_file.pem> with the path to your private key file, and <publ
 Update the system packages:
 
 sudo apt update
+
 sudo apt upgrade
+
 Install Apache:
 
 sudo apt install apache2
+
 Start Apache and enable it to start on boot:
 
 sudo systemctl start apache2
@@ -33,6 +37,7 @@ You should see the default Apache web page indicating a successful installation.
 
 Install MySQL:
 sudo apt install mysql-server
+
 Secure the MySQL installation:
 
 sudo mysql_secure_installation
@@ -40,6 +45,7 @@ Follow the prompts to set a root password and answer the security-related questi
 
 Install PHP:
 sudo apt install php libapache2-mod-php php-mysql
+
 Configure Apache to use PHP:
 
 sudo nano /etc/apache2/mods-enabled/dir.conf
